@@ -25,38 +25,39 @@ describe('암호검사기', () => {
   });
 
   test('모든 조건을 충족하면 강함', () => {
-    expect(
-      passwordMeter('abcABC123')
-    ).toBe(PasswordStrength.STRONG);
-    expect(
-      passwordMeter('123abcABC')
-    ).toBe(PasswordStrength.STRONG);
+    expect(passwordMeter('abcABC123')).toBe(PasswordStrength.STRONG);
+    expect(passwordMeter('123abcABC')).toBe(PasswordStrength.STRONG);
   });
 
   test('길이가 8미만, 다른 조건 충족', () => {
-    expect(
-      passwordMeter('abcC123')
-    ).toBe(PasswordStrength.NORMAL);
-    expect(
-      passwordMeter('123abcC')
-    ).toBe(PasswordStrength.NORMAL);
-    expect(
-      passwordMeter('Cabc12')
-    ).toBe(PasswordStrength.NORMAL);
+    expect(passwordMeter('abcC123')).toBe(PasswordStrength.NORMAL);
+    expect(passwordMeter('123abcC')).toBe(PasswordStrength.NORMAL);
+    expect(passwordMeter('Cabc12')).toBe(PasswordStrength.NORMAL);
   });
 
   test('대문자 없음, 다른 조건 충족', () => {
-    expect(
-      passwordMeter('abcd1234')
-    ).toBe(PasswordStrength.NORMAL);
+    expect(passwordMeter('abcd1234')).toBe(PasswordStrength.NORMAL);
   });
 
   test('숫자 없음, 다른 조건 충족', () => {
-    expect(
-      passwordMeter('ABCDabcde')
-    ).toBe(PasswordStrength.NORMAL);
-    expect(
-      passwordMeter('abcdeABCD')
-    ).toBe(PasswordStrength.NORMAL);
-  })
+    expect(passwordMeter('ABCDabcde')).toBe(PasswordStrength.NORMAL);
+    expect(passwordMeter('abcdeABCD')).toBe(PasswordStrength.NORMAL);
+  });
+
+  test('길이만 충족', () => {
+    expect(passwordMeter('abcdehiohw')).toBe(PasswordStrength.WEAK);
+  });
+
+  test('대문자 포함만', () => {
+    expect(passwordMeter('Abcdef')).toBe(PasswordStrength.WEAK);
+  });
+
+  test('숫자만 포함', () => {
+    expect(passwordMeter('abc123')).toBe(PasswordStrength.WEAK);
+    expect(passwordMeter('123abc')).toBe(PasswordStrength.WEAK);
+  });
+
+  test('아무것도 충족하지 않음', () => {
+    expect(passwordMeter('abwe')).toBe(PasswordStrength.WEAK);
+  });
 })
