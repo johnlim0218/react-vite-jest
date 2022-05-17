@@ -27,6 +27,7 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
+    "@jest/types": "^27.5.1",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^13.0.0",
     "@types/jest": "^27.4.1",
@@ -42,6 +43,12 @@
     "testEnvironment": "jsdom",
     "setupFilesAfterEnv": [
       "<rootDir>/jest.setup.ts"
-    ]
+    ],
+    "moduleNameMapper": {
+      "@commons/(.*)$": "<rootDir>/src/commons/$1",
+      "@pages/(.*)$": "<rootDir>/src/pages/$1",
+      "@redux/(.*)$": "<rootDir>/src/redux/$1",
+      "@utils/(.*)$": "<rootDir>/src/utils/$1"
+    }
   }
 }

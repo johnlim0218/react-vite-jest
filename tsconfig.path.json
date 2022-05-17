@@ -6,7 +6,8 @@
       "@components/*": ["components/*"],
       "@redux/*": ["redux/*"],
       "@store/*": ["store/*"],
-      "@pages/*": ["pages/*"]
+      "@pages/*": ["pages/*"],
+      "@utils/*": ["utils/*"]
     }
   }
 }

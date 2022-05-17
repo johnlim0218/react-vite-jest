@@ -3,6 +3,8 @@ import { render, screen } from '@testing-library/react';
 import App from './app';
 import { createMemoryHistory } from 'history';
 import { HashRouter, Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store/configureStore';
 
 describe('<App />', () => {
   it ('renders component correctly', () => {
@@ -10,9 +12,11 @@ describe('<App />', () => {
     history.push('/login');
 
     render (
-      <Router location={history.location} navigator={history}>
-        <App />
-      </Router>
+      <Provider store={store}>
+        <Router location={history.location} navigator={history}>
+          <App />
+        </Router>
+      </Provider>
     )
 
     const loginTitle = screen.getByText('로그인');
