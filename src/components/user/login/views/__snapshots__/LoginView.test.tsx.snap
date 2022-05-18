@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginView 로그인 뷰 스냅샷 1`] = `
+<div>
+  <div>
+    <div>
+      로그인
+    </div>
+    <form>
+      <div>
+        <p>
+          사원번호
+        </p>
+        <input
+          aria-label="employeeId"
+          name="employeeId"
+          value=""
+        />
+      </div>
+      <div>
+        <p>
+          비밀번호
+        </p>
+        <input
+          aria-label="password"
+          name="password"
+          type="password"
+          value=""
+        />
+      </div>
+      <button
+        type="submit"
+      >
+        버튼
+      </button>
+    </form>
+  </div>
+</div>
+`;

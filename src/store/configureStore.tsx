@@ -1,6 +1,6 @@
 import { AnyAction, configureStore, Dispatch, MiddlewareAPI } from '@reduxjs/toolkit';
 // import { composeWithDevTools } from "redux-devtools-extension";
-import rootReducer from '../redux/rootReducer';
+import rootReducer from '@redux/rootReducer';
 
 const loggerMiddleware = (store: MiddlewareAPI<Dispatch, any>) => (next: Dispatch<AnyAction>) => (action: any) => {
   const result = next(action);

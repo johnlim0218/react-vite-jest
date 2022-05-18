@@ -1,17 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { CompanyCode } from '@utils/mapping/company';
-
-interface AuthState {
-  authKey: string | null;
-  employeeData: EmployeeData | null;
-  employeeCompanyName: string;
-}
-
-interface EmployeeData {
-  employeeId: string;
-  name: string;
-  roles: any;
-}
+import { AuthState, EmployeeData } from './types';
 
 export const initialAuthKey = () => {
   return localStorage.getItem('authKey');

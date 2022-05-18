@@ -9,9 +9,10 @@ export default defineConfig({
     alias: {
       '@commons': path.resolve(__dirname, './src/commons'),
       '@components': path.resolve(__dirname, './src/components'),
+      '@pages': path.resolve(__dirname, './src/pages'),
       '@redux': path.resolve(__dirname, './src/redux'),
       '@store': path.resolve(__dirname, './src/store'),
-      '@pages': path.resolve(__dirname, './src/pages')
+      '@utils': path.resolve(__dirname, './src/utils'),
     }
   }
 })
