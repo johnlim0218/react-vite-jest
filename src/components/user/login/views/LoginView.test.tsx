@@ -27,6 +27,7 @@ describe('LoginView', () => {
   });
 
   it('로그인 onSubmit - "비밀번호가 틀렸습니다."', () => {
+    // onSubmit 함수 테스트 여기서 하는건가?
     utils = render(
       <Provider store={store}>
         <Login />
