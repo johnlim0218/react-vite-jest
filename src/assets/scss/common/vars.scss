@@ -1,0 +1,45 @@
+@import './mixin.scss';
+
+$primaryColor: #53a8ff;
+$primaryBackColor: rgba(83, 168, 255, 0.1);
+$secondaryColor: #dddddd;
+$textColor: #000;
+$whiteColor: #fff;
+$textColorDim: #888;
+$primaryRedColor: #ff7474;
+$gray8b97ae: #8b97ae;
+$grayB9BDC5: #b9bdc5;
+
+// 작업별 컬러
+$meterReadingColor: #ff7474;
+$visitColor: #ff8a00;
+$meterReplacementColor: #1b97d8;
+$safetyCheckColor: #65d752;
+$nonPaymentColor: #ffc226;
+
+$meterReadingBackColor: rgba(255, 116, 116, 0.1);
+$visitBackColor: rgba(255, 138, 0, 0.1);
+$meterReplacementBackColor: rgba(27, 151, 216, 0.1);
+$safetyCheckBackColor: rgba(101, 215, 82, 0.1);
+$nonPaymentBackColor: rgba(255, 194, 38, 0.1);
+
+$placeholderColor: #cfcfcf;
+$placeholderFocusedColor: #d2dce7;
+
+$controlBorderColor: #ddd;
+$controlSelectedBorderColor: $primaryColor;
+
+$controlBackgroundColor: #fcfcfc;
+$controlSelectedBackgroundColor: #f6fbff;
+$controlDisabledBackgroundColor: #f2f2f2;
+$controlDisabledForegroundColor: #888;
+
+$defaultHorizontalPadding: toRem(25);
+$defaultVerticalPadding: toRem(20);
+
+$overlayColor: rgba(0, 0, 0, 0.5);
+$defaultLabelWidth: toRem(80);
+$defaultControlPadding: toRem(5);
+$defaultControlHeight: toRem(45);
+
+$lineDivisionColor: #ebf0f5;

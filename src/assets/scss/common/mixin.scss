@@ -1,0 +1,111 @@
+@function toRem($value) {
+  $remValue: ($value * 0.16) + rem;
+  @return $remValue;
+}
+
+@mixin borderbox() {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+@mixin font($weight, $px: 16) {
+  @if $weight == light {
+    font-weight: 300;
+  } @else if $weight == regular {
+    font-weight: 400;
+  } @else if $weight == medium {
+    font-weight: 500;
+  } @else if $weight == bold {
+    font-weight: 600;
+  }
+  font-size: toRem($px);
+}
+
+@mixin fontStyleFill($fontColor, $fillColor) {
+  color: $fontColor !important;
+  background-color: $fillColor !important;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  animation: #{$str};
+}
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin defaultControl() {
+  border: 1px solid $controlBorderColor;
+  background-color: $controlBackgroundColor;
+  border-radius: toRem(8);
+}
+
+@mixin disabledControl() {
+  // border: 1px solid #ddd;
+  background-color: $controlDisabledBackgroundColor;
+  color: $controlDisabledForegroundColor;
+  border-radius: toRem(8);
+}
+
+@mixin focusedControl() {
+  border: 1px solid $controlSelectedBorderColor;
+  background-color: $controlSelectedBackgroundColor;
+  border-radius: toRem(8);
+}
+
+@mixin centerAlign() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin defaultPadding() {
+  padding: $defaultVerticalPadding $defaultHorizontalPadding;
+}
+
+@mixin defaultControlMargin() {
+  //margin: 0 0 toRem(30) 0;
+  margin: 0;
+}
+
+@mixin defaultInlineControlMargin() {
+  margin: 0;
+}
+
+@mixin categorizedColors($category) {
+  @if $category == METER_READING {
+    color: $meterReadingColor;
+    background-color: $meterReadingBackColor;
+  } @else if $category == VISIT {
+    color: $visitColor;
+    background-color: $visitBackColor;
+  } @else if $category == SAFETY_CHECK {
+    color: $safetyCheckColor;
+    background-color: $safetyCheckBackColor;
+  } @else if $category == BOILER {
+    color: $safetyCheckColor;
+    background-color: $safetyCheckBackColor;
+  } @else if $category == METER {
+    color: $meterReplacementColor;
+    background-color: $meterReplacementBackColor;
+  } @else if $category == METER_LARGE {
+    color: $meterReplacementColor;
+    background-color: $meterReplacementBackColor;
+  } @else if $category == NON_PAYMENT {
+    color: $nonPaymentColor;
+    background-color: $nonPaymentBackColor;
+  }
+}

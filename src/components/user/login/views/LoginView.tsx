@@ -21,7 +21,7 @@ function LoginView() {
   const onChangeInput = (e: any) => {
     const { name, value } = e.target;
     setLoginState((prevState) => {
-      return { ...prevState, [name]: value }
+      return { ...prevState, [name]: value };
     });
   };
 
@@ -30,11 +30,13 @@ function LoginView() {
     if (loginState.password !== '1') {
       setLoginError(true);
     } else {
-      dispatch(setEmployeeData({
-        employeeId: loginState.employeeId,
-        name: '관우림',
-        roles: 'EMPLOYEE'
-      }))
+      dispatch(
+        setEmployeeData({
+          employeeId: loginState.employeeId,
+          name: '관우림',
+          roles: 'EMPLOYEE'
+        })
+      );
     }
   };
 
@@ -44,21 +46,27 @@ function LoginView() {
       <form onSubmit={onSubmit}>
         <div>
           <p>사원번호</p>
-          <input name="employeeId" aria-label="employeeId" value={loginState?.employeeId} onChange={onChangeInput}/>
+          <input name="employeeId" aria-label="employeeId" value={loginState?.employeeId} onChange={onChangeInput} />
         </div>
         <div>
           <p>비밀번호</p>
-          <input type="password" name="password" aria-label="password" value={loginState?.password} onChange={onChangeInput} />
+          <input
+            type="password"
+            name="password"
+            aria-label="password"
+            value={loginState?.password}
+            onChange={onChangeInput}
+          />
         </div>
-        {loginError &&
+        {loginError && (
           <div>
             <p>{wrongPassword}</p>
           </div>
-        }
+        )}
         <button type="submit">버튼</button>
       </form>
     </div>
-  )
+  );
 }
 
 export default LoginView;

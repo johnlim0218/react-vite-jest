@@ -1,0 +1,46 @@
+@import url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
+@import './common/reset.scss';
+@import './include.scss';
+@import './common/common.scss';
+
+// // views
+// @import './customer.scss';
+// @import './dashboard.scss';
+// @import './errors.scss';
+// @import './management.scss';
+// @import './meterReading.scss';
+// @import './meterReplacement.scss';
+// @import './nonPayment.scss';
+// @import './notifications.scss';
+// @import './safetyCheck.scss';
+// @import './shared.scss';
+// @import './user.scss';
+// @import './visit.scss';
+// @import './walkthrough.scss';
+
+// dev
+// @import './dev.scss';
+
+html {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Spoqa Han Sans Neo', -apple-system, 'Avenir-light', 'AvenirLTStd-Light', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+hr {
+  margin: 0.5rem 0;
+}
+
+pre {
+  font-family: menlo, monospace;
+  font-size: 0.82rem;
+  background: #304d63;
+  color: #eee;
+  border: 1px solid #304d63;
+  padding: 0 0.8rem 0;
+  white-space: break-spaces;
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+}

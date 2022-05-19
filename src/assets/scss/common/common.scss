@@ -1,0 +1,249 @@
+@import './vars.scss';
+@import './mixin.scss';
+
+h3 {
+  @include font(medium, 18);
+  margin-bottom: toRem(20);
+  &.noPadding {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.margin-30 {
+  margin: toRem(30);
+}
+
+.margin-100 {
+  margin: toRem(100);
+}
+
+.margin-top-50 {
+  margin-top: toRem(50);
+}
+
+.margin-bottom-20 {
+  margin-bottom: toRem(20);
+}
+
+.margin-bottom-30 {
+  margin-bottom: toRem(30);
+}
+
+.margin-bottom-100 {
+  margin-bottom: toRem(100);
+}
+
+.padding-0 {
+  padding: 0;
+}
+
+.padding-100 {
+  padding: toRem(100);
+}
+
+.padding-left-100 {
+  padding-left: toRem(100);
+}
+
+.center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+.relative {
+  position: relative;
+}
+.ab_rc {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.line-division {
+  background: $lineDivisionColor;
+  height: toRem(5);
+  margin: 0;
+}
+
+.line-hr {
+  width: 100%;
+  height: 1px;
+  background-color: $secondaryColor;
+  margin: 0;
+  padding: 0;
+}
+
+.primaryColor {
+  color: $primaryColor;
+}
+
+.primaryBackColor {
+  background: $primaryBackColor;
+}
+
+.meterReadingBackColor {
+  background: $meterReadingBackColor;
+}
+.visitBackColor {
+  background: $visitBackColor;
+}
+.meterReplacementBackColor {
+  background: $meterReplacementBackColor;
+}
+.safetyCheckBackColor {
+  background: $safetyCheckBackColor;
+}
+.nonPaymentBackColor {
+  background: $nonPaymentBackColor;
+}
+
+.meterReadingColor {
+  color: $meterReadingColor;
+}
+.visitColor {
+  color: $visitColor;
+}
+.meterReplacementColor {
+  color: $meterReplacementColor;
+}
+.safetyCheckColor {
+  color: $safetyCheckColor;
+}
+.nonPaymentColor {
+  color: $nonPaymentColor;
+}
+
+.sm-text {
+  @include font(medium, 14);
+  &.dim,
+  .dim {
+    color: $textColorDim;
+  }
+}
+
+.more-sm-text {
+  @include font(medium, 12);
+  &.dim,
+  .dim {
+    color: $textColorDim;
+  }
+}
+
+.submain_header {
+  height: toRem(120);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @include font(bold,16);
+  background-repeat: no-repeat;
+  background-position: center toRem(33);
+  background-size: toRem(54);
+  flex-shrink: 0;
+  flex-grow: 0;
+
+  &.has-title {
+    height: toRem(138);
+    background-position: center toRem(15);
+    padding-bottom: toRem(34);
+    justify-content: flex-end;
+  }
+
+  &.visit {
+    background-image: url(../../../assets/images/common/ic-visit.svg);
+  }
+
+  &.safetyCheck {
+    background-image: url(../../../assets/images/common/ic-safety-check.svg);
+  }
+
+  &.meterReading {
+    background-image: url(../../../assets/images/common/ic-meter-reading.svg);
+  }
+
+  &.meterReplacement {
+    background-image: url(../../../assets/images/common/ic-meter-replacement.svg);
+  }
+
+  &.nonPayment {
+    background-image: url(../../../assets/images/common/ic-non-payment.svg);
+  }
+}
+
+.legend_group {
+  @include font(medium, 14);
+  text-align: center;
+  margin-top: toRem(10);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  .t {
+    padding: 0 toRem(10);
+    display:inline-flex;
+    align-items: center;
+    .square {
+      display: inline-block;
+      width: toRem(14);
+      height: toRem(14);
+      border-radius: toRem(3);
+      background-color: $gray8b97ae;
+      margin-right: toRem(5);
+      &.blue { 
+        background-color: $primaryColor;
+      }
+      &.yellow {
+        background-color: $primaryColor;
+      }
+    }
+    .border {
+      display: inline-block;
+      width: toRem(11);
+      height: toRem(3);
+      background-color: $gray8b97ae;
+      margin-right: toRem(8);
+      &.blue {
+        background-color: $primaryColor;
+      }
+    }
+  }
+}
+
+#wrap {
+  @include font(medium, 13);
+  line-height: 1.4em;
+  #table_terms { width:100%; 
+    th,td {
+      border:1px solid #ddd;
+      padding:toRem(7);
+    }
+  }
+}
+
+.keypadHiddenArea { 
+  height:0;
+  &.active{
+    height:toRem(221);  
+  }
+}
+
+.btn_logout_wrap {
+  position: absolute;
+  left: 0;
+  bottom: 75px;
+  width: 100%;
+  padding: 0 $defaultHorizontalPadding;
+  .btn_logout {
+    text-align: center;
+    padding:toRem(15) 0 toRem(20);
+    span {
+      display: inline-block;
+      background: url('../../images/common/ic-logout.svg') no-repeat left center;
+      padding-left: toRem(20);
+    }
+  }
+}
+
