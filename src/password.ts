@@ -4,7 +4,7 @@ export enum PasswordStrength {
   WEAK = 'weak'
 }
 
-export function exceptionTest () {
+export function exceptionTest() {
   throw new Error('error');
 }
 
@@ -22,11 +22,11 @@ function contiansNumber(password: string) {
 
 export function passwordMeter(password?: string | null) {
   if (!password || password === '') throw new Error('error');
-  
+
   let metCount = 0;
-  if (meetLength(password)) metCount ++;  // 길이 충족
-  if (contiansUppercase(password)) metCount ++; // 대문자 포함
-  if (contiansNumber(password)) metCount ++; // 숫자 포함
+  if (meetLength(password)) metCount++; // 길이 충족
+  if (contiansUppercase(password)) metCount++; // 대문자 포함
+  if (contiansNumber(password)) metCount++; // 숫자 포함
 
   if (metCount === 1 || metCount === 0) {
     return PasswordStrength.WEAK;
@@ -35,6 +35,6 @@ export function passwordMeter(password?: string | null) {
   if (metCount === 2) {
     return PasswordStrength.NORMAL;
   }
-  
+
   return PasswordStrength.STRONG;
 }

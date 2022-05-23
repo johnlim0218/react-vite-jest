@@ -5,13 +5,13 @@ interface AccountProps {
   password: string;
 }
 
-function Account ({ id, password }: AccountProps) {
+function Account({ id, password }: AccountProps) {
   return (
     <div>
       <h2>{id}</h2>
       <h2>{password}</h2>
     </div>
-  )
+  );
 }
 
 export default Account;

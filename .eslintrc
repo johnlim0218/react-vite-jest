@@ -1,6 +1,13 @@
 {
-  "extends": ["react-app", "plugin:prettier/recommended"],
-  "plugins": ["prettier"],
+  "root": true,
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["testing-library", "jest-dom", "prettier"],
   "rules": {
     "no-alert": "off",
     "no-console": "warn",

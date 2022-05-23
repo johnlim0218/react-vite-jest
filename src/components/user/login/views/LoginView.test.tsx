@@ -32,49 +32,49 @@ describe('LoginView', () => {
         <Login />
       </Provider>
     );
-    const titleElement = utils.getByText('로그인');
+    const titleElement = screen.getByText('로그인');
     expect(titleElement).toBeInTheDocument();
   });
 
   it('로그인 onSubmit - "비밀번호가 틀렸습니다."', () => {
     // onSubmit 함수 테스트 여기서 하는건가?
-    utils = render(
+    render(
       <Provider store={store}>
         <Login />
       </Provider>
     );
 
-    const employeeIdInput = utils.getByLabelText('employeeId');
+    const employeeIdInput = screen.getByLabelText('employeeId');
     fireEvent.change(employeeIdInput, { target: { value: '1234567' } });
     expect((employeeIdInput as HTMLInputElement).value).toBe('1234567');
 
-    const passwordInput = utils.getByLabelText('password');
+    const passwordInput = screen.getByLabelText('password');
     fireEvent.change(passwordInput, { target: { value: '2' } });
     expect((passwordInput as HTMLInputElement).value).toBe('2');
 
-    const button = utils.getByRole('button');
+    const button = screen.getByRole('button');
     fireEvent.click(button);
 
-    const wrongPasswordMessage = utils.getByText('비밀번호가 틀렸습니다.');
-    expect(wrongPasswordMessage).toBeInTheDocument();
+    const wrongPasswordMessage = screen.getByText('비밀번호가 틀렸습니다.');
+    expect(wrongPasswordMessage).toHaveTextContent('비밀번호가 틀렸습니다.');
   });
 
   it('로그인 onSubmit - setEmployeeData()', () => {
-    utils = render(
+    render(
       <Provider store={store}>
         <Login />
       </Provider>
     );
 
-    const employeeIdInput = utils.getByLabelText('employeeId');
+    const employeeIdInput = screen.getByLabelText('employeeId');
     fireEvent.change(employeeIdInput, { target: { value: '1234567' } });
     expect((employeeIdInput as HTMLInputElement).value).toBe('1234567');
 
-    const passwordInput = utils.getByLabelText('password');
+    const passwordInput = screen.getByLabelText('password');
     fireEvent.change(passwordInput, { target: { value: '1' } });
     expect((passwordInput as HTMLInputElement).value).toBe('1');
 
-    const button = utils.getByRole('button');
+    const button = screen.getByRole('button');
     fireEvent.click(button);
 
     expect(store.getActions()[0]).toEqual(

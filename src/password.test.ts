@@ -1,4 +1,4 @@
-import { exceptionTest, passwordMeter, PasswordStrength } from "./password";
+import { exceptionTest, passwordMeter, PasswordStrength } from './password';
 
 describe('암호검사기', () => {
   test('test(message)', async () => {
@@ -7,20 +7,20 @@ describe('암호검사기', () => {
   });
 
   test('null 입력이면 익셉션 발생', () => {
-    expect(() => { 
-      passwordMeter(null) 
+    expect(() => {
+      passwordMeter(null);
     }).toThrowError();
   });
 
   test('빈 값 입력이면 익셉션 발생(undefined)', () => {
     expect(() => {
-      passwordMeter(undefined)
+      passwordMeter(undefined);
     }).toThrowError();
   });
 
   test('빈 값 입력이면 익셉션 발생("")', () => {
     expect(() => {
-      passwordMeter('')
+      passwordMeter('');
     }).toThrowError();
   });
 
@@ -60,4 +60,4 @@ describe('암호검사기', () => {
   test('아무것도 충족하지 않음', () => {
     expect(passwordMeter('abwe')).toBe(PasswordStrength.WEAK);
   });
-})
+});

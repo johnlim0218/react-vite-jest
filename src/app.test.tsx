@@ -7,17 +7,17 @@ import { Provider } from 'react-redux';
 import store from './store/configureStore';
 
 describe('<App />', () => {
-  it ('renders component correctly', () => {
+  it('renders component correctly', () => {
     const history = createMemoryHistory();
     history.push('/login');
 
-    render (
+    render(
       <Provider store={store}>
         <Router location={history.location} navigator={history}>
           <App />
         </Router>
       </Provider>
-    )
+    );
 
     const loginTitle = screen.getByText('로그인');
     expect(loginTitle).toBeInTheDocument();
@@ -25,7 +25,7 @@ describe('<App />', () => {
     // const { container } = render(<App />);
     // expect(container.getElementsByTagName('div')).toHaveLength(1);
     // expect(container.getElementsByTagName('div')[0]).toHaveTextContent('테스트');
-    
+
     // expect(container).toMatchSnapshot();
   });
 });
