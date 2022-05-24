@@ -31,7 +31,7 @@ exports[`LoginView 로그인 뷰 스냅샷 1`] = `
       <button
         type="submit"
       >
-        버튼
+        로그인
       </button>
     </form>
   </div>

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { fireEvent, render, RenderResult, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import * as authActions from '@redux/auth';
@@ -9,6 +10,7 @@ import Login from '..';
 describe('LoginView', () => {
   let utils: RenderResult;
   const mockStore = configureMockStore();
+  const user = userEvent.setup();
 
   // 가짜 스토어
   let store = mockStore({
@@ -32,8 +34,8 @@ describe('LoginView', () => {
         <Login />
       </Provider>
     );
-    const titleElement = screen.getByText('로그인');
-    expect(titleElement).toBeInTheDocument();
+    const titleElement = screen.getAllByText('로그인');
+    expect(titleElement[0]).toBeInTheDocument();
   });
 
   it('로그인 onSubmit - "비밀번호가 틀렸습니다."', () => {
@@ -59,7 +61,7 @@ describe('LoginView', () => {
     expect(wrongPasswordMessage).toHaveTextContent('비밀번호가 틀렸습니다.');
   });
 
-  it('로그인 onSubmit - setEmployeeData()', () => {
+  it('로그인 onSubmit - setEmployeeData()', async () => {
     render(
       <Provider store={store}>
         <Login />
@@ -67,15 +69,17 @@ describe('LoginView', () => {
     );
 
     const employeeIdInput = screen.getByLabelText('employeeId');
-    fireEvent.change(employeeIdInput, { target: { value: '1234567' } });
+    await user.type(employeeIdInput, '1234567');
     expect((employeeIdInput as HTMLInputElement).value).toBe('1234567');
 
     const passwordInput = screen.getByLabelText('password');
-    fireEvent.change(passwordInput, { target: { value: '1' } });
+    await user.type(passwordInput, '1');
+    // fireEvent.change(passwordInput, { target: { value: '1' } });
     expect((passwordInput as HTMLInputElement).value).toBe('1');
 
-    const button = screen.getByRole('button');
-    fireEvent.click(button);
+    const button = screen.getByRole('button', { name: '로그인' });
+    // fireEvent.click(button);
+    await user.click(button);
 
     expect(store.getActions()[0]).toEqual(
       authActions.setEmployeeData({

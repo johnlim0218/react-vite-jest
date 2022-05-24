@@ -63,7 +63,7 @@ function LoginView() {
             <p>{wrongPassword}</p>
           </div>
         )}
-        <button type="submit">버튼</button>
+        <button type="submit">로그인</button>
       </form>
     </div>
   );

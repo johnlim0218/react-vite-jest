@@ -19,8 +19,8 @@ describe('<App />', () => {
       </Provider>
     );
 
-    const loginTitle = screen.getByText('로그인');
-    expect(loginTitle).toBeInTheDocument();
+    const loginTitle = screen.getAllByText('로그인');
+    expect(loginTitle[0]).toBeInTheDocument();
 
     // const { container } = render(<App />);
     // expect(container.getElementsByTagName('div')).toHaveLength(1);
